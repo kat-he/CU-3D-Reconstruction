@@ -1,3 +1,8 @@
+import numpy as np
+import kornia as K
+import kornia.feature as KF
+import torch
+
 def load_torch_image(file_name: Path | str, device=torch.device("cpu")):
     """Loads an image and adds batch dimension"""
     img = K.io.load_image(file_name, K.io.ImageLoadType.RGB32, device=device)[None, ...]

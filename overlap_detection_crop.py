@@ -1,3 +1,7 @@
+from lightglue import match_pair
+import numpy as np
+import torch
+
 def overlap_detection(extractor, matcher, image_0, image_1, min_matches):
     feats_0, feats_1, matches_01 = match_pair(extractor, matcher, image_0, image_1)
     

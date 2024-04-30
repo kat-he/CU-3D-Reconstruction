@@ -1,3 +1,10 @@
+import numpy as np
+from check_orientation.pre_trained_models import create_model
+from torch import Tensor as T
+import torch.nn.functional as F
+import pandas as pd
+
+
 rot_correction_transform = T.Compose([
     T.Resize((224, 224)),
     T.ConvertImageDtype(torch.float),
@@ -52,4 +59,4 @@ def _testing_rotation_correction():
     img = load_torch_image(f"{train_image_dir}/{file_name}")
     rotated_img, predicted_rot_angle = perform_rotation_correction(img)
     print(predicted_rot_angle)
-    media.show_image(rotated_img[0, ...].permute(1,2,0).cpu())
+media.show_image(rotated_img[0, ...].permute(1,2,0).cpu())

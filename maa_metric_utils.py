@@ -1,3 +1,5 @@
+import numpy as np
+
 _EPS = np.finfo(float).eps * 4.0
 
 # mAA evaluation thresholds per scene, different accoring to the scene

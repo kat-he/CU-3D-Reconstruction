@@ -1,3 +1,7 @@
+import torch
+import numpy as np
+import cv2
+
 def increase_brightness(image, value=40):
     if image.dtype != torch.float32:
         image = image.float() / 255.0
